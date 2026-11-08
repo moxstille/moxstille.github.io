@@ -1,8 +1,51 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <title>Sito Web</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Effects</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="image.png" type="image/png">
     </head>
     <body>
-        <h1>Hello, World!</h1>
+        <div class="rack">
+            <div class="pedal recorder" id="pedalRecorder" data-status="idle">
+                <h2 class="name">RECORDER</h2>
+                <div class="light"></div>
+                <p class="status" id="textStatus">Idle</p>
+                <button class="button" id="recordButton"></button>
+                <audio id="fxChainDry" controls></audio>
+            </div>
+
+            <div class="pedal eq" id="pedalEQ">
+                <h2 class="name">EQ</h2>
+                <div class="slides">
+                    <label>
+                        <input type="range" id="eqLow" min="-20" max="20" value="0">
+                        <span class="label">Low</span>
+                    </label>
+                    <label>
+                        <input type="range" id="eqMid" min="-20" max="20" value="0">
+                        <span class="label">Mid</span>
+                        
+                    </label>
+                    <label>
+                        <input type="range" id="eqHigh" min="-20" max="20" value="0">
+                        <span class="label">High</span>
+                    </label>
+                </div>
+                <audio id="fxChainEQ" controls></audio>
+            </div>
+
+            <div class="pedal drive" id="pedalDrive">
+                <h2 class="name">DRIVE</h2>
+                <label class="driveKnob">
+                    <input type="range" id="driveSlider" min="0" max="20" value="0">
+                    Gain
+                </label>
+                <audio id="fxChainDist" controls></audio>
+            </div>
+            <script src="app.js"></script>
+        </div>
     </body>
 </html>
